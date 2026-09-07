@@ -3,21 +3,102 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
   <title>rck109d</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230b0b0e'/%3E%3Crect x='3' y='3' width='10' height='10' fill='%23f4f4f6'/%3E%3C/svg%3E">
   <style>
-    body {
-      background: #000;
-      color: #fff;
-      font-size: 400%;
+    :root {
+      --bg: #0b0b0e;
+      --fg: #f4f4f6;
+      --muted: #8b8b95;
+      --rule: #232329;
+      --focus: #ffd633;
     }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; background: var(--bg); color: var(--fg); }
+
+    body {
+      min-height: 100vh;
+      font-family: ui-monospace, "Cascadia Mono", "SF Mono", Menlo, Consolas, monospace;
+      font-size: clamp(20px, 2.6vw, 30px);
+      line-height: 1.4;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    main {
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: clamp(2rem, 8vh, 6rem) 1.5rem;
+    }
+
+    h1 {
+      margin: 0 0 1.5rem;
+      font-size: 1em;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    li { border-bottom: 1px solid var(--rule); }
+
     a {
-      color: #fff;
+      display: block;
+      padding: 1.1em 0.5em;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    a .name {
+      display: block;
+      font-size: 2.4em;
+      font-weight: 700;
+      line-height: 1.1;
+    }
+
+    a .desc {
+      display: block;
+      margin-top: 0.35em;
+      color: var(--muted);
+    }
+
+    a:hover, a:active {
+      background: var(--fg);
+      color: var(--bg);
+    }
+
+    a:hover .desc, a:active .desc { color: var(--bg); }
+
+    a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: -3px;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      a { transition: background-color 80ms linear, color 80ms linear; }
     }
   </style>
 </head>
 <body>
-  <ul>
-    <li><a href="/tet/">tet</a></li>
-  </ul>
+  <main>
+    <h1>rck109d</h1>
+    <ul>
+      <li>
+        <a href="/tet/">
+          <span class="name">tet</span>
+          <span class="desc">a Tetris clone</span>
+        </a>
+      </li>
+    </ul>
+  </main>
 </body>
 </html>
