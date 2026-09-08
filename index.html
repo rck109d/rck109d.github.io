@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
   <title>rck109d</title>
+  <script>
+    // Google Analytics (gtag.js), loaded only on the public site so local
+    // development is not counted.
+    if (location.hostname === "rck109d.com") {
+      var tag = document.createElement("script");
+      tag.async = true;
+      tag.src = "https://www.googletagmanager.com/gtag/js?id=G-ZKHEBZZ13M";
+      document.head.appendChild(tag);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { dataLayer.push(arguments); };
+      gtag("js", new Date());
+      gtag("config", "G-ZKHEBZZ13M");
+    }
+  </script>
   <link rel="icon" href="/favicon.ico">
   <style>
     :root {
